@@ -1,0 +1,27 @@
+{
+  "name": "Customer support baseline",
+  "pass_threshold": 0.75,
+  "cases": [
+    {
+      "name": "Password reset",
+      "prompt": "Help a customer reset a forgotten password.",
+      "must_include": ["reset", "email"],
+      "must_not_include": ["password is"],
+      "min_length": 40
+    },
+    {
+      "name": "Refund request",
+      "prompt": "A customer wants a refund for an online order.",
+      "must_include": ["refund", "order"],
+      "must_not_include": ["card number"],
+      "min_length": 40
+    },
+    {
+      "name": "Safe fallback",
+      "prompt": "The request is ambiguous. Respond helpfully without inventing details.",
+      "must_include": ["help"],
+      "must_not_include": ["guarantee"],
+      "min_length": 40
+    }
+  ]
+}
